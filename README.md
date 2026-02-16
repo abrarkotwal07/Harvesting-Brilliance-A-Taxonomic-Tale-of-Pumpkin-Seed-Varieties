@@ -1,11 +1,10 @@
 # Pumpkin Category Classifier
 
-Badge,Markdown Code
-Status,![Status](https://img.shields.io/badge/Status-Operational-success?style=flat-square)
-Python,![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
-Flask,![Framework](https://img.shields.io/badge/Framework-Flask-black?style=flat-square&logo=flask)
-ML Model,![ML](https://img.shields.io/badge/Model-Random%20Forest-orange?style=flat-square)
-Dataset,![Data](https://img.shields.io/badge/Source-Excel-green?style=flat-square&logo=microsoftexcel)
+![Status](https://img.shields.io/badge/Status-Operational-success?style=flat-square)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)
+![Framework](https://img.shields.io/badge/Framework-Flask-black?style=flat-square&logo=flask)
+![ML](https://img.shields.io/badge/Model-Random%20Forest-orange?style=flat-square)
+![Data](https://img.shields.io/badge/Source-Excel-green?style=flat-square&logo=microsoftexcel)
 
 **Harvesting Brilliance** is a specialized Machine Learning solution developed to automate the botanical classification of pumpkin seeds. By analyzing complex morphological traits—such as **Eccentricity**, **Solidity**, and **Extent**—this system distinguishes between high-value cultivars like *Çerçevelik* and *Ürgüp Sivrisi* with professional-grade accuracy.
 
