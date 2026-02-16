@@ -1,45 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pumpkin Classification Result</title>
-  <link rel="stylesheet" href="/static/styles/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result | Pumpkin Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <div class="app-background">
-    <div class="app-shell">
-      <section class="card result-card">
-        <h1 class="app-title">Pumpkin Classification Result</h1>
 
-        <div class="result-banner">
-          <span class="result-label">Predicted Category</span>
-          <span class="result-value">
-            {% if prediction == 0 %}
-              Cercevelik
-            {% elif prediction == 1 %}
-              Urgup Sivrisi
-            {% else %}
-              Unknown
-            {% endif %}
-          </span>
-        </div>
+    <div class="app-background">
+        <div class="app-shell">
 
-        <h3 class="section-heading">Input Measurements</h3>
-        <div class="grid grid--summary">
-          {% for feature, value in input_summary.items() %}
-            <div class="summary-item">
-              <span class="summary-label">{{ feature }}</span>
-              <span class="summary-value">{{ value }}</span>
-            </div>
-          {% endfor %}
-        </div>
 
-        <div class="actions">
-          <a href="/" class="primary-button is-link">Try Another Prediction</a>
+            <main class="card result-card">
+                <h1 class="app-title">Pumpkin Classification Result</h1>
+
+                <div class="result-banner">
+                    <div class="result-label">Predicted Category</div>
+                    <div class="result-value">
+                        {{ prediction_text.replace("Your seed lies in ", "").replace(" class", "") }}
+                    </div>
+                </div>
+
+                <h3 class="section-heading">Input Measurements</h3>
+
+                <div class="grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Area</span>
+                        <span class="summary-value">{{ request.form.get('Area', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Perimeter</span>
+                        <span class="summary-value">{{ request.form.get('Perimeter', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Major_Axis_Length</span>
+                        <span class="summary-value">{{ request.form.get('Major_Axis_Length', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Minor_Axis_Length</span>
+                        <span class="summary-value">{{ request.form.get('Minor_Axis_Length', '-') }}</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Convex_Area</span>
+                        <span class="summary-value">{{ request.form.get('Convex_Area', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Equiv_Diameter</span>
+                        <span class="summary-value">{{ request.form.get('Equiv_Diameter', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Eccentricity</span>
+                        <span class="summary-value">{{ request.form.get('Eccentricity', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Solidity</span>
+                        <span class="summary-value">{{ request.form.get('Solidity', '-') }}</span>
+                    </div>
+
+                    <div class="summary-item">
+                        <span class="summary-label">Extent</span>
+                        <span class="summary-value">{{ request.form.get('Extent', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Roundness</span>
+                        <span class="summary-value">{{ request.form.get('Roundness', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Aspect_RatioN</span>
+                        <span class="summary-value">{{ request.form.get('Aspect_Ration', '-') }}</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Compactness</span>
+                        <span class="summary-value">{{ request.form.get('Compactness', '-') }}</span>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a href="/" class="primary-button">
+                      
+                        Try Another Prediction
+                    </a>
+                </div>
+
+            </main>
+
+            <footer class="app-footer">
+                <p class="footer-note">Results generated via Random Forest Classification</p>
+            </footer>
+
         </div>
-      </section>
     </div>
-  </div>
+
 </body>
+
 </html>
